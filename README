@@ -1,6 +1,6 @@
-== Inventory
+== PageRank-Dashboard
 
-Inventory system for tracking computer systems.
+Web dashboard to display page ranks of web sites.
 
 
 == Requirements
@@ -14,7 +14,7 @@ Inventory system for tracking computer systems.
 
 1. /path-to-mongodb/bin/mongod # start mongodb 
 
-2. git clone git://github.com/Druwerd/inventory.git # checkout source code
+2. git clone git://github.com/Druwerd/PageRank-Dashboard.git # checkout source code
 
 3. cd inventory && bundle install # install gem dependencies
 
