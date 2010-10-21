@@ -1,0 +1,21 @@
+== Inventory
+
+Inventory system for tracking computer systems.
+
+
+== Requirements
+
+1. mongodb - http://www.mongodb.org/
+
+2. Rails 3 - http://rubyonrails.org/
+
+
+== Getting Started
+
+1. /path-to-mongodb/bin/mongod # start mongodb 
+
+2. git clone git://github.com/Druwerd/inventory.git # checkout source code
+
+3. cd inventory && bundle install # install gem dependencies
+
+4. rails s # start the web server
