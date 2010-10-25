@@ -16,6 +16,6 @@ Web dashboard to display page ranks of web sites.
 
 2. git clone git://github.com/Druwerd/PageRank-Dashboard.git # checkout source code
 
-3. cd inventory && bundle install # install gem dependencies
+3. cd PageRank-Dashboard && bundle install # install gem dependencies
 
 4. rails s # start the web server
