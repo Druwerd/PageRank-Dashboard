@@ -1,11 +1,22 @@
+<h1>PageRank (PR)</h1>
+<p>
+PageRank is a numeric value that represents how important a page is on the web.<br />
+0 = least important, 10 = most important<br />
+</p>
+<%= link_to 'Add Site', new_site_path %>
+
 <h2>Reference Sites</h2>
-<table class="sites">
+<table class="sortable">
+<thead>	
   <tr>
     <th>Name</th>
 	<th>Page Rank</th>
 	<th>Load Time</th>
 	<th>Last Updated</th>
   </tr>
+</thead>
+
+<tbody>
 <% @reference_sites.each do |site| %>
   <tr class="<%= cycle("even", "odd") %>">
     <td><%= site.name %></td>
@@ -14,19 +25,22 @@
 	<td><%= site.updated_at.strftime("%Y-%m-%d") %></td>
   </tr>
 <% end %>
+</tbody>
 <% reset_cycle() %>
 </table>
 
 <h2>GN Sites</h2>
-<%= link_to 'New Site', new_site_path %>
-<table class="sites">
+<table class="sortable">
+<thead>
   <tr>
     <th>Name</th>
 	<th>Page Rank</th>
 	<th>Load Time</th>
 	<th>Last Updated</th>
   </tr>
+</thead>
 
+<tbody>
 <% @sites.each do |site| %>
   <tr class="<%= cycle("even", "odd") %>">
     <td><%= site.name %></td>
@@ -41,4 +55,5 @@
 	-->
   </tr>
 <% end %>
+</tbody>
 </table>
