@@ -9,8 +9,8 @@
 <% @reference_sites.each do |site| %>
   <tr class="<%= cycle("even", "odd") %>">
     <td><%= site.name %></td>
-	<td><%= show_page_rank(site) %></td>
-	<td><%= site.load_time %></td>
+	<td><%= site.page_rank %></td>
+	<td><%= show_load_time(site.load_time) %></td>
 	<td><%= site.updated_at.strftime("%Y-%m-%d") %></td>
   </tr>
 <% end %>
@@ -30,8 +30,8 @@
 <% @sites.each do |site| %>
   <tr class="<%= cycle("even", "odd") %>">
     <td><%= site.name %></td>
-	<td><%= show_page_rank(site) %></td>
-	<td><%= site.load_time %></td>
+	<td><%= site.page_rank %></td>
+	<td><%= show_load_time(site.load_time) %></td>
 	<td><%= site.updated_at.strftime("%Y-%m-%d") %></td>
 	<!--
 	<td><%= link_to 'Update Page Rank', {:id => site.id, :action => 'update_page_rank'}, :method => :post %></td>
