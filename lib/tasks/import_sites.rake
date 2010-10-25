@@ -9,7 +9,7 @@ namespace :sites do
     new_sites = hosts - site_names
 
     new_sites.each do |site_name|
-      next if site_name ~= /gorillanation\.com/ # skip sites with GN domains
+      next if site_name =~ /gorillanation\.com/ # skip sites with GN domains
       puts "+ Importing #{site_name}"
       Site.new(:name => site_name).save
     end
