@@ -28,11 +28,9 @@ class Site
   def get_page_load_time()
     url = self.name
     url = "http://#{url}" if url !~ /^https?:\/\//
-    url = URI.parse(url)
     start_time = Time.now
-    req = Net::HTTP.start(url.host, url.port){ |http|
-      http.get('/')
-    }
+    `wget -E -H -p --delete-after -q #{url}`
+    raise 'wget errror' unless $?.success?
     self.load_time = Time.now - start_time
   rescue 
     self.load_time = -1
