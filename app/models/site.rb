@@ -29,7 +29,7 @@ class Site
     url = self.name
     url = "http://#{url}" if url !~ /^https?:\/\//
     start_time = Time.now
-    `wget -E -H -p --delete-after -q -T #{timeout} #{url}`
+    `wget -E -H -p --delete-after -q -T #{timeout} -t 1 #{url}`
     raise 'wget errror' unless $?.success?
     self.load_time = Time.now - start_time
   rescue 
