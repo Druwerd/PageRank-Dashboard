@@ -1,4 +1,4 @@
-Inventory::Application.routes.draw do
+PageRankDashboard::Application.routes.draw do
   resources :sites
   match 'sites/update_page_rank/:id', :to => 'sites#update_page_rank', :via => 'post'
   
