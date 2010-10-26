@@ -25,7 +25,7 @@ class Site
     self.page_rank = PageRankr.ranks(self.name)[:google]
   end
   
-  def get_page_load_time(timeout=120)
+  def get_page_load_time(timeout=30)
     url = self.name
     url = "http://#{url}" if url !~ /^https?:\/\//
     start_time = Time.now
