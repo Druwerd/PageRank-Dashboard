@@ -12,7 +12,6 @@ PageRank is a numeric value that represents how important a page is on the web.<
     <th>Name</th>
 	<th>Page Rank</th>
 	<th>Load Time</th>
-	<th>Last Updated</th>
   </tr>
 </thead>
 
@@ -22,7 +21,6 @@ PageRank is a numeric value that represents how important a page is on the web.<
     <td><%= site.name %></td>
 	<td><%= site.page_rank %></td>
 	<td><%= show_load_time(site.load_time) %></td>
-	<td><%= site.updated_at.strftime("%Y-%m-%d") %></td>
   </tr>
 <% end %>
 </tbody>
@@ -36,7 +34,6 @@ PageRank is a numeric value that represents how important a page is on the web.<
     <th>Name</th>
 	<th>Page Rank</th>
 	<th>Load Time</th>
-	<th>Last Updated</th>
   </tr>
 </thead>
 
@@ -46,7 +43,6 @@ PageRank is a numeric value that represents how important a page is on the web.<
     <td><%= site.name %></td>
 	<td><%= site.page_rank %></td>
 	<td><%= show_load_time(site.load_time) %></td>
-	<td><%= site.updated_at.strftime("%Y-%m-%d") %></td>
 	<!--
 	<td><%= link_to 'Update Page Rank', {:id => site.id, :action => 'update_page_rank'}, :method => :post %></td>
     <td><%= link_to 'Show', site %></td>
