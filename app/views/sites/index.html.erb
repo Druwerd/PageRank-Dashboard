@@ -3,7 +3,11 @@
 PageRank is a numeric value that represents how important a page is on the web.<br />
 0 = least important, 10 = most important<br />
 </p>
-<%= link_to 'Add Site', new_site_path %>
+<%= link_to 'Add Site', new_site_path %><br />
+
+<p>
+Last updated: <%= @sites.first.updated_at.to_s(:db) %>
+</p>
 
 <h2>Reference Sites</h2>
 <table class="sortable">
