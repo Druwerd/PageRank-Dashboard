@@ -8,7 +8,7 @@ module SitesHelper
     if load_time < 0
       "error loading"
     else
-      "%.2f" % load_time
+      "%.1f" % load_time
     end
   end
 end
