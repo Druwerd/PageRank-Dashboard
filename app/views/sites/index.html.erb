@@ -1,3 +1,12 @@
+<script language="javascript">
+$(document).ready(function() 
+    { 
+		$("#refTable").tablesorter({widgets: ['zebra']});
+        $("#sitesTable").tablesorter({widgets: ['zebra']}); 
+    } 
+);
+</script>
+
 <h1>PageRank (PR)</h1>
 <p>
 PageRank is a numeric value that represents how important a page is on the web.<br />
@@ -10,7 +19,7 @@ Last updated: <%= @sites.first.updated_at.to_s(:db) if @sites.first %>
 </p>
 
 <h2>Reference Sites</h2>
-<table class="sortable">
+<table class="tablesorter" id="refTable">
 <thead>	
   <tr>
     <th>Name</th>
@@ -32,7 +41,7 @@ Last updated: <%= @sites.first.updated_at.to_s(:db) if @sites.first %>
 </table>
 
 <h2>GN Sites</h2>
-<table class="sortable">
+<table class="tablesorter" id="sitesTable">
 <thead>
   <tr>
     <th>Name</th>
