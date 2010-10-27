@@ -6,7 +6,7 @@ PageRank is a numeric value that represents how important a page is on the web.<
 <%= link_to 'Add Site', new_site_path %><br />
 
 <p>
-Last updated: <%= @sites.first.updated_at.to_s(:db) %>
+Last updated: <%= @sites.first.updated_at.to_s(:db) if @sites.first %>
 </p>
 
 <h2>Reference Sites</h2>
