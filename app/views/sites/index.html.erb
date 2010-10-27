@@ -24,7 +24,7 @@ Last updated: <%= @sites.first.updated_at.to_s(:db) if @sites.first %>
   <tr class="<%= cycle("even", "odd") %>">
     <td><%= site.name %></td>
 	<td><%= site.page_rank %></td>
-	<td><%= show_load_time(site.load_time) %></td>
+	<td class="numeric"><%= show_load_time(site.load_time) %></td>
   </tr>
 <% end %>
 </tbody>
@@ -46,7 +46,7 @@ Last updated: <%= @sites.first.updated_at.to_s(:db) if @sites.first %>
   <tr class="<%= cycle("even", "odd") %>">
     <td><%= site.name %></td>
 	<td><%= site.page_rank %></td>
-	<td><%= show_load_time(site.load_time) %></td>
+	<td class="numeric"><%= show_load_time(site.load_time) %></td>
 	<!--
 	<td><%= link_to 'Update Page Rank', {:id => site.id, :action => 'update_page_rank'}, :method => :post %></td>
     <td><%= link_to 'Show', site %></td>
