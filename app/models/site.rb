@@ -3,11 +3,12 @@ class Site
   
   key :name, String, :unique => true, :required => true
   key :page_rank, Integer
+  key :backlinks, Integer
   key :load_time, Float
   key :updated_at, Time
   key :reference, Boolean
   
-  before_save :get_page_rank, :get_page_load_time, :update_timestamp, :set_reference, :strip_name
+  before_save :get_page_rank, :get_backlinks, :get_page_load_time, :update_timestamp, :set_reference, :strip_name
   
   def strip_name
     self.name = self.name.strip
@@ -23,6 +24,10 @@ class Site
   
   def get_page_rank()
     self.page_rank = PageRankr.ranks(self.name)[:google]
+  end
+  
+  def get_backlinks()
+    self.backlinks = PageRankr.backlinks(self.name)[:google]
   end
   
   def get_page_load_time(timeout=30)

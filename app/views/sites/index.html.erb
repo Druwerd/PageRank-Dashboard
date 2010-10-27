@@ -9,9 +9,15 @@ $(document).ready(function()
 
 <h1>PageRank (PR)</h1>
 <p>
-PageRank is a numeric value that represents how important a page is on the web.<br />
-0 = least important, 10 = most important<br />
+<%= link_to 'PageRank', "http://www.google.com/corporate/tech.html" %> - a numeric value (0-10) that represents how important a page is on Google.
 </p>
+<p>
+Backlinks - number of links that point to the website from another website.
+</p>
+<p>
+Load Time - approximate time to load content on the website.
+</p>
+
 <%= link_to 'Add Site', new_site_path %><br />
 
 <p>
@@ -24,6 +30,7 @@ Last updated: <%= @sites.first.updated_at.to_s(:db) if @sites.first %>
   <tr>
     <th>Name</th>
 	<th>Page Rank</th>
+	<th>Backlinks</th>
 	<th>Load Time</th>
   </tr>
 </thead>
@@ -33,6 +40,7 @@ Last updated: <%= @sites.first.updated_at.to_s(:db) if @sites.first %>
   <tr class="<%= cycle("even", "odd") %>">
     <td><%= site.name %></td>
 	<td><%= site.page_rank %></td>
+	<td><%= site.backlinks %></td>
 	<td class="numeric"><%= show_load_time(site.load_time) %></td>
   </tr>
 <% end %>
@@ -46,6 +54,7 @@ Last updated: <%= @sites.first.updated_at.to_s(:db) if @sites.first %>
   <tr>
     <th>Name</th>
 	<th>Page Rank</th>
+	<th>Backlinks</th>
 	<th>Load Time</th>
   </tr>
 </thead>
@@ -55,6 +64,7 @@ Last updated: <%= @sites.first.updated_at.to_s(:db) if @sites.first %>
   <tr class="<%= cycle("even", "odd") %>">
     <td><%= site.name %></td>
 	<td><%= site.page_rank %></td>
+	<td><%= site.backlinks %></td>
 	<td class="numeric"><%= show_load_time(site.load_time) %></td>
 	<!--
 	<td><%= link_to 'Update Page Rank', {:id => site.id, :action => 'update_page_rank'}, :method => :post %></td>
