@@ -7,7 +7,7 @@ gem 'rails', '3.0.0'
 
 gem 'bson_ext'
 gem 'mongo_mapper'
-gem 'PageRankr', :require => 'page_rankr'
+gem 'PageRankr', '1.5.1', :require => 'page_rankr'
 
 # Use unicorn as the web server
 # gem 'unicorn'
