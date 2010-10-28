@@ -8,7 +8,7 @@ class Site
   key :updated_at, Time
   key :reference, Boolean
   
-  before_save :get_page_rank, :get_backlinks, :get_page_load_time, :update_timestamp, :set_reference, :strip_name
+  before_save :get_page_rank, :get_page_load_time, :update_timestamp, :set_reference, :strip_name
   
   def strip_name
     self.name = self.name.strip
