@@ -9,13 +9,13 @@ $(document).ready(function()
 
 <h1>PageRank (PR)</h1>
 <p>
-<%= link_to 'PageRank', "http://www.google.com/corporate/tech.html" %> - a numeric value (0-10) that represents how important a page is on Google.
+<%= link_to 'PageRank', "http://www.google.com/corporate/tech.html" %> - a numeric value (0-10, 10 is the best) that represents how important a page is on Google.
 </p>
 <p>
 Load Time - approximate time to load content on the website.
 </p>
 
-<%= link_to 'Add Site', new_site_path %><br />
+<!--  <%= link_to 'Add Site', new_site_path %><br /> -->
 
 <p>
 Last updated: <%= @sites.first.updated_at.to_s(:db) if @sites.first %>
