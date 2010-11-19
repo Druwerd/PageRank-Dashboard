@@ -37,7 +37,7 @@ class Site
     user_agent = "Mozilla/5.0 (X11; U; Linux i686; en-US) AppleWebKit/534.9 (KHTML, like Gecko) Ubuntu/10.04 Chromium/7.0.532.0 Chrome/7.0.532.0 Safari/534.9"
     `wget -E -H -p --delete-after -q -T #{timeout} -t 1 #{url} -U "#{user_agent}"`
     self.load_time = Time.now - start_time
-    raise 'wget network errror' if $?.exitstatus == 3
+    raise 'wget network errror' if $?.exitstatus == 4
   rescue 
     self.load_time = -1
   end
