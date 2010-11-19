@@ -36,7 +36,7 @@ class Site
     start_time = Time.now
     user_agent = "Mozilla/5.0 (X11; U; Linux i686; en-US) AppleWebKit/534.9 (KHTML, like Gecko) Ubuntu/10.04 Chromium/7.0.532.0 Chrome/7.0.532.0 Safari/534.9"
     `wget -E -H -p --delete-after -q -T #{timeout} -t 1 #{url} -U "#{user_agent}"`
-    #raise 'wget errror' unless $?.success?
+    raise 'wget errror' unless $?.success?
     self.load_time = Time.now - start_time
   rescue 
     self.load_time = -1
